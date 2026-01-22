@@ -33,12 +33,12 @@ This project demonstrates the implementation of a **Hybrid Identity Infrastructu
 * Implemented **Password Hash Synchronization (PHS)** to enable Single Sign-On (SSO).
 * Resolved UPN suffix matching issues to ensure cloud synchronization success.
 
-## 📊 Verification & Results
+## Verification & Results
 * **On-Premises:** Verified user objects in *Active Directory Users and Computers*.
 * **Sync Engine:** Confirmed "Success" status in the *Synchronization Service Manager*.
 * **Cloud:** Verified that all users appeared in the *Microsoft 365 Admin Center* with the status "Synced from on-premises."
 
 
 
-## 💡 Key Challenges & Solutions
+## Key Challenges & Solutions
 * **Quota Restrictions:** Initially encountered vCPU limits in East US. Resolved by pivoting to North Central US and selecting a high-performance D-series instance to ensure a smooth Windows Server 2025 GUI experience.

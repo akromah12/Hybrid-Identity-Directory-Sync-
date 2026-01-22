@@ -1,0 +1,19 @@
+$Domain = "corp.local"
+$Depts = @("IT", "HR", "Sales", "Finance", "Legal")
+
+for ($i = 1; $i -le 10; $i++) {
+    $Name = "HybridUser$i"
+    $Dept = $Depts[($i % $Depts.Count)]
+    
+    $SecurePass = ConvertTo-SecureString "P@ssw0rd2026!" -AsPlainText -Force
+
+    New-ADUser -Name $Name `
+               -SamAccountName $Name `
+               -UserPrincipalName "$Name@$Domain" `
+               -Department $Dept `
+               -Enabled $true `
+               -Path "OU=LabUsers,DC=corp,DC=local" `
+               -AccountPassword $SecurePass
+    
+    Write-Host "Actually created $Name in $Dept" -ForegroundColor Green
+}
